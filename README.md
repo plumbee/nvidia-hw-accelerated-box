@@ -41,3 +41,7 @@ The command below will run glxgears with hardware acceleration
 ```bash
 vglrun glxgears
 ```
+
+# Running HW accelerated GUI applications using nvidia-docker
+Yes, it's possible, check this out
+https://github.com/plumbee/nvidia-virtualgl
