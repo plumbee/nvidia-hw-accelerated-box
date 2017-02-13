@@ -45,3 +45,7 @@ vglrun glxgears
 # Running HW accelerated GUI applications using nvidia-docker
 Yes, it's possible, check this out
 https://github.com/plumbee/nvidia-virtualgl
+
+# Related posts
+- https://medium.com/@pigiuz/setting-up-a-hw-accelerated-desktop-on-aws-g2-instances-4b58718a4541#.g80twxf4f
+- https://medium.com/@pigiuz/hw-accelerated-gui-apps-on-docker-7fd424fe813e#.e0bhg911w
