@@ -94,7 +94,7 @@ pip install --upgrade pip
 pip install nvidia-docker-compose
 
 # install virtualgl
-export VGL_VERSION=2.5.1
+export VGL_VERSION=2.5.2
 wget http://downloads.sourceforge.net/project/virtualgl/${VGL_VERSION}/virtualgl_${VGL_VERSION}_amd64.deb
 dpkg -i virtualgl*.deb && rm virtualgl*.deb
 
