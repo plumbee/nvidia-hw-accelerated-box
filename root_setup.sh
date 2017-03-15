@@ -94,7 +94,8 @@ pip install --upgrade pip
 pip install nvidia-docker-compose
 
 # install virtualgl
-wget http://downloads.sourceforge.net/project/virtualgl/2.5.1/virtualgl_2.5.1_amd64.deb
+export VGL_VERSION=2.5.1
+wget http://downloads.sourceforge.net/project/virtualgl/${VGL_VERSION}/virtualgl_${VGL_VERSION}_amd64.deb
 dpkg -i virtualgl*.deb && rm virtualgl*.deb
 
 # Set VirtualLG defaults, xauth bits, this adds a DRI line to xorg.conf.
@@ -115,10 +116,12 @@ apt-get install -y mesa-utils
 
 # install turbovnc
 # can be updated to 1.5.1
-wget http://downloads.sourceforge.net/project/libjpeg-turbo/1.4.2/libjpeg-turbo-official_1.4.2_amd64.deb
+export LIBJPEG_VERSION=1.4.2
+wget http://downloads.sourceforge.net/project/libjpeg-turbo/${LIBJPEG_VERSION}/libjpeg-turbo-official_${LIBJPEG_VERSION}_amd64.deb
 dpkg -i libjpeg-turbo-official*.deb && rm libjpeg-turbo-official*.deb
 # can be updated to 2.1
-wget http://downloads.sourceforge.net/project/turbovnc/2.0.1/turbovnc_2.0.1_amd64.deb
+export TURBOVNC_VERSION=2.0.1
+wget http://downloads.sourceforge.net/project/turbovnc/${TURBOVNC_VERSION}/turbovnc_${TURBOVNC_VERSION}_amd64.deb
 dpkg -i turbovnc*.deb && rm turbovnc*.deb
 
 # install window manager
