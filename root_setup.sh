@@ -1,7 +1,8 @@
 #!/bin/bash
 apt-get update
 # INSTALLING AND CONFIGURING NVIDIA DRIVERS
-apt-get -y install nvidia-367 # installing driver
+apt-get -qqy install nvidia-367 # installing drivers
+apt-get -qqy install nvidia-modprobe
 # install X dependencies
 #apt-get install -y libglu1-mesa-dev # libGLU library (.a, .so)
 apt-get install -y xorg # X display server https://en.wikipedia.org/wiki/X.Org_Server
