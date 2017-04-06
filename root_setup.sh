@@ -1,11 +1,14 @@
 #!/bin/bash
 apt-get update
-# INSTALLING AND CONFIGURING NVIDIA DRIVERS
-apt-get -qqy install nvidia-367 # installing drivers
-apt-get -qqy install nvidia-modprobe
-# install X dependencies
-#apt-get install -y libglu1-mesa-dev # libGLU library (.a, .so)
+
 apt-get install -y xorg # X display server https://en.wikipedia.org/wiki/X.Org_Server
+
+# installing and configuring nvidia DRIVERS
+apt-get install build-essential -y
+curl -O http://us.download.nvidia.com/XFree86/Linux-x86_64/367.57/NVIDIA-Linux-x86_64-367.57.run
+chmod +x ./NVIDIA-Linux-x86_64-*.run
+./NVIDIA-Linux-x86_64-*.run -q -a -n -X -s
+
 # xorg conf generated via nvidia-xconfig --allow-empty-initial-configuration
 # overwriting xorg.conf adding the BusID where the video card is installed
 cat << EOF > /etc/X11/xorg.conf
@@ -103,6 +106,9 @@ dpkg -i virtualgl*.deb && rm virtualgl*.deb
 # Set VirtualLG defaults, xauth bits, this adds a DRI line to xorg.conf.
 #/opt/VirtualGL/bin/vglserver_config -config -s -f +t
 /opt/VirtualGL/bin/vglserver_config -config +s +f -t  # access open to all users, restricting users doesn't really work :\
+
+# install lightdm
+apt-get install -qqy lightdm
 
 # fix lightdm bug
 # https://wiki.archlinux.org/index.php/VirtualGL#Problem:_Error_messages_about_.2Fetc.2Fopt.2FVirtualGL.2Fvgl_xauth_key_not_existing
